@@ -4,6 +4,35 @@ TriggerEvent("getCore", function(core)
     VORPcore = core
 end)
 
+-- SQL loading
+CreateThread(function()
+    -- Initiate Table
+    local table = MySQL.query.await([[
+        CREATE TABLE IF NOT EXISTS `votingballots` (
+          `characterid` int(11) DEFAULT NULL,
+          `firstname` varchar(50) DEFAULT NULL,
+          `lastname` varchar(50) DEFAULT NULL,
+          `ballotnumber` int(11) DEFAULT NULL,
+          `ballotanswer` varchar(50) DEFAULT NULL
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        ]])
+    if not table then
+        print("ERROR: Failed to create votingballots table")
+    end
+    local table2 = MySQL.query.await([[
+        CREATE TABLE IF NOT EXISTS `votingballots` (
+          `characterid` int(11) DEFAULT NULL,
+          `firstname` varchar(50) DEFAULT NULL,
+          `lastname` varchar(50) DEFAULT NULL,
+          `ballotnumber` int(11) DEFAULT NULL,
+          `ballotanswer` varchar(50) DEFAULT NULL
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+        ]])
+    if not table2 then
+        print("ERROR: Failed to create votingballots table")
+    end
+end)
+
 -- Functions
 local function GetIdentity(source, identity)
     for _, v in pairs(GetPlayerIdentifiers(source)) do
