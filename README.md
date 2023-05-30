@@ -9,7 +9,9 @@ You are able to:
 Dependencies:
 - <a href="https://github.com/whooith/nh-keyboard">nh-keyboard</a>
 
-<br />
+
+https://github.com/mNm-server/illmat1c-votingsystem/assets/87187094/df0e52b3-4701-4658-868f-d8f661f8d0f1
+
 <br />
 
 🤝 How to support me:<br /> 
