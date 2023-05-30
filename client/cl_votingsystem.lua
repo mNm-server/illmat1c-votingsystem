@@ -26,7 +26,7 @@ local function split_with_comma(str)
 end
 
 local function ViewPollResults(pollid, answers)
-    exports.mega_progressbars:DisplayProgressBar(6000, "Awaiting results...", true)
+	VORPcore.NotifyRightTip("Awaiting results...",6000)
     MenuData.CloseAll()
     local elements = {}
     local AllAnswers = {}
